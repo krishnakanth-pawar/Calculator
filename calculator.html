@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head> <title>Calculator</title>
+<style>
+table{
+border: 1px solid;
+}
+
+table, td, th{
+padding:10px;
+background-color:lightgreen;
+margin:auto;
+}
+
+input[type='number'], input[type='text']{
+width: 160px;
+height:30px;
+}
+
+input[type='button']{
+width: 50px;
+height:40px;
+}
+
+</style>
+
+<script>
+function calc(id)
+{
+var val1=parseFloat(document.getElementById("value1").value);
+var val2=parseFloat(document.getElementById("value2").value);
+if (isNaN(val1) || isNaN(val2))
+alert("Value cannot be Empty");
+else if(id=="add")
+document.getElementById("answer").value=val1+val2;
+else if(id=="sub")
+document.getElementById("answer").value=val1-val2; 
+else if(id=="mul")
+document.getElementById("answer").value=val1*val2; 
+else if(id=="div")
+document.getElementById("answer").value=val1/val2;
+}
+
+function cls()
+{
+
+value1.value="0";
+
+value2.value="0";
+
+answer.value="";
+
+}
+
+</script>
+
+</head>
+<body>
+<h2> <center>SIMPLE CALCULATOR</h2> </center>
+<table>
+<tr>
+<td><input type="button" value="+" id="add" onclick="calc(id)"></td>
+<td><input type="button" value="-" id="sub" onclick="calc(id)"></td>
+<td><input type="button" value="*" id= "mul" onclick="calc(id)"></td>
+<td><input type="button" value="/" id="div" onclick="calc(id)"></td>
+<td><input type="button" value="Clear" onclick="cls()"></td>
+</tr>
+</table>
+<br>
+
+<table>
+<tr>
+<td>Enter the first value</td>
+<td><input type="number" step="0.01" id="value1"></td>
+</tr>
+
+<tr>
+<td >Enter the second value</td>
+<td><input type="number" step="0.01" id= "value2" ></td>
+</tr>
+
+<tr>
+
+<td >Answer:</td>
+
+<td> <input type="text" id="answer" value=""></td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
